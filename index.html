@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirza Mohd Ashran Baig</title>
+<meta name="description" content="Senior DevOps / Site Reliability Engineer with 5+ years automating infrastructure, building CI/CD pipelines and keeping production reliable across Azure, AWS and GCP.">
+<meta property="og:title" content="Mirza Mohd Ashran Baig — Senior DevOps / SRE">
+<meta property="og:description" content="Infrastructure as code, CI/CD, Kubernetes and observability across Azure, AWS and GCP.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2334d399' text-anchor='middle'%3EAB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --text: #0f172a;
+    --muted: #526077;
+    --border: #dde3ea;
+    --accent: #059669;
+    --accent-soft: rgba(5, 150, 105, .10);
+    --accent-2: #2563eb;
+    --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 8px 24px rgba(15, 23, 42, .06);
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1120;
+      --surface: #111a2e;
+      --surface-2: #17223a;
+      --text: #e6edf6;
+      --muted: #94a3b8;
+      --border: #22304a;
+      --accent: #34d399;
+      --accent-soft: rgba(52, 211, 153, .12);
+      --accent-2: #60a5fa;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1120;
+    --surface: #111a2e;
+    --surface-2: #17223a;
+    --text: #e6edf6;
+    --muted: #94a3b8;
+    --border: #22304a;
+    --accent: #34d399;
+    --accent-soft: rgba(52, 211, 153, .12);
+    --accent-2: #60a5fa;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background .2s, color .2s;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 640px) { .wrap { padding: 0 28px; } }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+  .brand { font-family: var(--mono); font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+  .brand span { color: var(--accent); }
+  .nav ul { display: none; list-style: none; margin: 0; padding: 0; gap: 22px; }
+  .nav ul a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; }
+  .nav ul a:hover { color: var(--text); }
+  @media (min-width: 760px) { .nav ul { display: flex; } }
+  .theme-btn {
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    width: 36px; height: 36px; border-radius: 10px; cursor: pointer;
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .theme-btn svg { width: 18px; height: 18px; }
+
+  /* Hero */
+  .hero { padding: 72px 0 56px; }
+  @media (min-width: 760px) { .hero { padding: 104px 0 80px; } }
+  .hero-grid { display: grid; gap: 40px; align-items: center; }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr 1fr; } }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 13px; color: var(--accent);
+    background: var(--accent-soft); padding: 6px 12px; border-radius: 999px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 var(--accent); animation: pulse 2s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); } 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.03em; margin: 20px 0 16px; font-weight: 800; }
+  h1 .hl { color: var(--accent); }
+  .lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 15px;
+    text-decoration: none; border: 1px solid var(--border); background: var(--surface);
+    transition: transform .15s, border-color .15s;
+  }
+  .btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .btn.primary { color: #052e1f; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #052e1f; } }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* Terminal */
+  .term {
+    background: #0d1424; border: 1px solid #1f2b45; border-radius: 14px;
+    box-shadow: var(--shadow); overflow: hidden; font-family: var(--mono); font-size: 13px;
+    color: #cbd5e1; min-width: 0;
+  }
+  .term-bar { display: flex; gap: 7px; padding: 12px 14px; border-bottom: 1px solid #1f2b45; align-items: center; }
+  .term-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .term-bar i:nth-child(1) { background: #f87171; } .term-bar i:nth-child(2) { background: #fbbf24; } .term-bar i:nth-child(3) { background: #34d399; }
+  .term-bar b { margin-left: 8px; font-weight: 400; color: #64748b; font-size: 12px; }
+  .term pre { margin: 0; padding: 18px; white-space: pre-wrap; word-break: break-word; line-height: 1.7; min-height: 280px; }
+  .t-p { color: #34d399; } .t-c { color: #60a5fa; } .t-k { color: #f472b6; } .t-s { color: #fbbf24; } .t-m { color: #64748b; }
+  .cursor { display: inline-block; width: 8px; height: 15px; background: #34d399; vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
+  @media (min-width: 760px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+  .stat b { display: block; font-size: 28px; letter-spacing: -0.02em; font-weight: 800; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  /* Sections */
+  section { padding: 64px 0; }
+  .sec-head { margin-bottom: 32px; }
+  .sec-head .num { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+  h2 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.02em; margin: 6px 0 8px; }
+  .sec-head p { color: var(--muted); margin: 0; max-width: 620px; }
+
+  /* Skills */
+  .skills { display: grid; gap: 14px; }
+  @media (min-width: 700px) { .skills { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .skills { grid-template-columns: repeat(3, 1fr); } }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .card h3 { margin: 0 0 12px; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+  .card h3 .ic { width: 32px; height: 32px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
+  .card h3 .ic svg { width: 17px; height: 17px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-family: var(--mono); font-size: 12px; padding: 4px 9px; border-radius: 6px; background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+
+  /* Experience */
+  .timeline { position: relative; display: grid; gap: 16px; }
+  .job { display: grid; gap: 4px 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  @media (min-width: 760px) { .job { grid-template-columns: 170px 1fr; } }
+  .job .when { font-family: var(--mono); font-size: 13px; color: var(--accent); padding-top: 3px; }
+  .job h3 { margin: 0; font-size: 18px; }
+  .job .co { color: var(--muted); font-weight: 500; margin-bottom: 10px; }
+  .job ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .job li { margin: 4px 0; }
+  .job li strong { color: var(--text); font-weight: 600; }
+
+  /* Certs */
+  .certs { display: grid; gap: 14px; }
+  @media (min-width: 760px) { .certs { grid-template-columns: repeat(3, 1fr); } }
+  .cert { display: flex; gap: 14px; align-items: flex-start; }
+  .badge { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; font-weight: 800; font-size: 13px; color: #fff; flex-shrink: 0; font-family: var(--mono); }
+  .badge.ms { background: linear-gradient(135deg, #0078d4, #2b88d8); }
+  .badge.g { background: linear-gradient(135deg, #34a853, #4285f4); }
+  .cert h3 { margin: 0 0 2px; font-size: 15px; line-height: 1.35; }
+  .cert span { color: var(--muted); font-size: 13px; }
+
+  /* Exploring */
+  .explore { display: grid; gap: 14px; }
+  @media (min-width: 760px) { .explore { grid-template-columns: repeat(3, 1fr); } }
+  .explore .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Contact */
+  .contact { text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 48px 20px; }
+  .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 26px; }
+  .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; text-align: center; font-family: var(--mono); }
+
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .dot, .cursor { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span>~/</span>ashranbaig</a>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle color theme">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Open to collaboration</span>
+          <h1>Mirza Mohd<br>Ashran Baig<br><span class="hl">Senior DevOps &amp; SRE</span></h1>
+          <p class="lead">I automate infrastructure, build scalable CI/CD pipelines and keep production systems reliable — across Azure, AWS and Google Cloud, with 5+ years of hands-on experience.</p>
+          <div class="cta">
+            <a class="btn primary" href="#contact">Get in touch</a>
+            <a class="btn" href="https://github.com/ashranbaig" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="term" aria-label="Terminal summary">
+          <div class="term-bar"><i></i><i></i><i></i><b>ashran@sre: ~</b></div>
+          <pre id="termOut"></pre>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats reveal">
+      <div class="stat"><b>5+</b><span>Years in DevOps &amp; SRE</span></div>
+      <div class="stat"><b>99.95%</b><span>Uptime maintained</span></div>
+      <div class="stat"><b>40%</b><span>Fewer incidents via DevSecOps</span></div>
+      <div class="stat"><b>3</b><span>Cloud platforms</span></div>
+    </div>
+
+    <section id="skills">
+      <div class="sec-head reveal">
+        <div class="num">01 / core competencies</div>
+        <h2>What I work with</h2>
+        <p>Cloud platforms, infrastructure as code, container orchestration, monitoring and DevSecOps practices that help teams run secure, highly available systems at scale.</p>
+      </div>
+      <div class="skills">
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>Infrastructure as Code</h3>
+          <div class="tags"><span class="tag">Terraform</span><span class="tag">Bicep</span><span class="tag">ARM Templates</span><span class="tag">Ansible</span><span class="tag">CloudFormation</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>Cloud Platforms</h3>
+          <div class="tags"><span class="tag">Azure IaaS / PaaS</span><span class="tag">Azure Migrate</span><span class="tag">AWS</span><span class="tag">Google Cloud</span><span class="tag">GKE</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v3a3 3 0 0 0 3 3h6"/></svg></span>CI/CD Engineering</h3>
+          <div class="tags"><span class="tag">Azure DevOps (YAML)</span><span class="tag">Jenkins</span><span class="tag">GitLab CI</span><span class="tag">GitHub Actions</span><span class="tag">CircleCI</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>Containers &amp; Orchestration</h3>
+          <div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GKE</span><span class="tag">Helm</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>Monitoring &amp; Logging</h3>
+          <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">ELK Stack</span><span class="tag">Azure Monitor</span><span class="tag">Cloud Monitoring</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Networking &amp; Security</h3>
+          <div class="tags"><span class="tag">VNets</span><span class="tag">vWAN</span><span class="tag">ExpressRoute</span><span class="tag">NSGs</span><span class="tag">NVAs</span><span class="tag">SAST</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>Automation &amp; Scripting</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">PowerShell</span><span class="tag">Java</span><span class="tag">Linux</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>Data Platforms</h3>
+          <div class="tags"><span class="tag">Snowflake</span><span class="tag">SnapLogic</span></div>
+        </div>
+        <div class="card reveal">
+          <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Tooling</h3>
+          <div class="tags"><span class="tag">Git</span><span class="tag">Postman</span><span class="tag">Helm Charts</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-head reveal">
+        <div class="num">02 / professional experience</div>
+        <h2>Where I've worked</h2>
+        <p>From 24/7 production support to building platform automation for enterprise clients.</p>
+      </div>
+      <div class="timeline">
+        <article class="job reveal">
+          <div class="when">2024 — Present</div>
+          <div>
+            <h3>Senior DevOps Engineer</h3>
+            <div class="co">Hexaware Technologies</div>
+            <ul>
+              <li>Designed scalable data pipelines with SnapLogic and Snowflake.</li>
+              <li>Automated deployments using Azure DevOps YAML pipelines.</li>
+              <li>Built reusable, secure Terraform modules for infrastructure provisioning.</li>
+              <li>Ensured <strong>99.95% uptime</strong> through proactive monitoring with Prometheus and Azure Monitor.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job reveal">
+          <div class="when">2023 — 2024</div>
+          <div>
+            <h3>Associate DevOps Engineer</h3>
+            <div class="co">Stovl / Eximietas Design</div>
+            <ul>
+              <li>Developed GitLab CI pipelines with integrated SAST and automation.</li>
+              <li>Provisioned and deployed workloads on GKE using Terraform, Docker and Helm.</li>
+              <li>Implemented observability with Google Cloud Monitoring to track system health.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job reveal">
+          <div class="when">2022 — 2023</div>
+          <div>
+            <h3>Associate DevOps Consultant</h3>
+            <div class="co">KPMG Global Services</div>
+            <ul>
+              <li>Delivered IaC automation and pipeline workflows for supply chain platforms.</li>
+              <li>Ran Terraform and Azure DevOps training sessions for development teams.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job reveal">
+          <div class="when">2020 — 2022</div>
+          <div>
+            <h3>DevOps Engineer / Site Reliability Engineer</h3>
+            <div class="co">Mindtree</div>
+            <ul>
+              <li>Supported 24/7 production workloads with global SRE best practices.</li>
+              <li>Improved pipeline reliability in Jenkins and Azure DevOps.</li>
+              <li>Reduced incidents by <strong>40%</strong> through proactive DevSecOps automation.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="sec-head reveal">
+        <div class="num">03 / certifications</div>
+        <h2>Certified across clouds</h2>
+      </div>
+      <div class="certs">
+        <div class="card cert reveal">
+          <div class="badge ms">MS</div>
+          <div><h3>DevOps Engineer Expert</h3><span>Microsoft Certified</span></div>
+        </div>
+        <div class="card cert reveal">
+          <div class="badge ms">MS</div>
+          <div><h3>Azure Fundamentals</h3><span>Microsoft Certified</span></div>
+        </div>
+        <div class="card cert reveal">
+          <div class="badge g">G</div>
+          <div><h3>Professional Cloud DevOps Engineer</h3><span>Google Cloud</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exploring">
+      <div class="sec-head reveal">
+        <div class="num">04 / currently exploring</div>
+        <h2>What I'm learning next</h2>
+      </div>
+      <div class="explore">
+        <div class="card reveal"><h3>Advanced Kubernetes</h3><p>Deeper cluster features and scaling strategies for demanding workloads.</p></div>
+        <div class="card reveal"><h3>Serverless architectures</h3><p>Event-driven, serverless designs for enterprise applications.</p></div>
+        <div class="card reveal"><h3>Compliance automation</h3><p>Security and compliance automation that holds up at scale.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact reveal">
+        <div class="sec-head" style="margin-bottom:12px">
+          <div class="num">05 / contact</div>
+          <h2>Let's build something together</h2>
+        </div>
+        <p>I'm always open to collaboration and conversations about new ideas. Feel free to explore my repositories or reach out on any of these.</p>
+        <div class="socials">
+          <a class="btn primary" href="https://www.linkedin.com/in/ashranbaig/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/ashranbaig" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://leetcode.com/ashranbaig1310" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            LeetCode
+          </a>
+          <a class="btn" href="https://instagram.com/ashran.baig" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            Instagram
+          </a>
+          <a class="btn" href="https://www.buymeacoffee.com/ashranbaig" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            Buy me a coffee
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Mirza Mohd Ashran Baig · built with plain HTML &amp; CSS</div>
+</footer>
+
+<script>
+  // Theme toggle (remembered per browser when storage is available)
+  (function () {
+    const root = document.documentElement;
+    const icon = document.getElementById('themeIcon');
+    const sun = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
+    const moon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+    const isDark = () => root.getAttribute('data-theme')
+      ? root.getAttribute('data-theme') === 'dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const paint = () => { icon.innerHTML = isDark() ? sun : moon; };
+    paint();
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      paint();
+    });
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Typed terminal intro
+  (function () {
+    const out = document.getElementById('termOut');
+    const lines = [
+      ['cmd', 'whoami'],
+      ['out', '<span class="t-s">Mirza Mohd Ashran Baig</span> — Senior DevOps / SRE'],
+      ['cmd', 'kubectl get skills -o wide'],
+      ['out', '<span class="t-c">iac</span>        Terraform · Bicep · Ansible\n<span class="t-c">cloud</span>      Azure · AWS · GCP\n<span class="t-c">ci/cd</span>      Azure DevOps · GitLab · Jenkins\n<span class="t-c">observe</span>    Prometheus · Grafana · ELK'],
+      ['cmd', 'cat slo.yaml'],
+      ['out', '<span class="t-k">uptime</span>: <span class="t-s">99.95%</span>\n<span class="t-k">incidents</span>: <span class="t-s">-40%</span>  <span class="t-m"># DevSecOps automation</span>'],
+    ];
+    const prompt = '<span class="t-p">➜</span> <span class="t-c">~</span> ';
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let html = '';
+    if (reduce) {
+      lines.forEach(([t, s]) => { html += (t === 'cmd' ? prompt + s : s) + '\n'; });
+      out.innerHTML = html + prompt + '<span class="cursor"></span>';
+      return;
+    }
+    let i = 0;
+    function next() {
+      if (i >= lines.length) { out.innerHTML = html + prompt + '<span class="cursor"></span>'; return; }
+      const [type, text] = lines[i++];
+      if (type === 'out') { html += text + '\n'; out.innerHTML = html; setTimeout(next, 350); return; }
+      let c = 0;
+      (function type1() {
+        out.innerHTML = html + prompt + text.slice(0, c) + '<span class="cursor"></span>';
+        if (c++ < text.length) setTimeout(type1, 45);
+        else { html += prompt + text + '\n'; setTimeout(next, 250); }
+      })();
+    }
+    setTimeout(next, 400);
+  })();
+
+  // Reveal on scroll
+  (function () {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(e => io.observe(e));
+  })();
+</script>
+</body>
+</html>
